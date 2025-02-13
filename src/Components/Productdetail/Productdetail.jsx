@@ -13,10 +13,11 @@ const dispatch=useDispatch()
   <div className='w-full border-2 p-3  flex flex-col bg-black  md:flex-row gap-3
    border-green-500 h-[570px] lg:h-[380px] lg:w-[60%]'>
    <img className=' h-[150px] md:h-full w-full md:w-[40%]' src={prodetail.image}/>
-     <div className='space-y-2 text-green-500 font-bold justify-center place-items-center text-center w-full  md:w-[50%]'>
+     <div className='space-y-2 text-green-500 font-bold 
+      place-items-center text-center md:text-first md:place-items-start w-full  md:w-[50%]'>
       <p className='text-2xl'>{prodetail.name}</p>
       <p className='text-xl flex items-center'><FaIndianRupeeSign/>{prodetail.price}</p>
-      <p>{prodetail.des}</p>
+      <p className='md:text-start'>{prodetail.des}</p>
     <button onClick={()=>dispatch(decreaseproduct(prodetail.price))} 
     className={`rounded-l-full mr-2 ${quantitybutton }`}>-</button>
      {prodetail.quantity}
