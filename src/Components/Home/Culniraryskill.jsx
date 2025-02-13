@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
  const learnreciepe=[{
 name:"Learn new reciepe",
@@ -41,7 +42,8 @@ function Culniraryskill() {
 
     </div>
     ))}
-     <button className='w-[80px] h-10 text-white mt-5' style={{backgroundColor:"#7FFF00"}}>Sign up</button>
+    <Link to="/login">
+     <button className='w-[80px] h-10 text-white mt-5' style={{backgroundColor:"#7FFF00"}}>Sign up</button></Link>
     </div>
 </div>
 
