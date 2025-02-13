@@ -40,8 +40,8 @@ function Reciepes() {
             <p className='font-bold'>{a.price}</p>
             
             </div>
-            <div className='w-full justify-center place-items-center'>
-            <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center  place-items-center border-2 border-green-500 
+            <div className='w-full text-center justify-center place-items-center'>
+            <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center text-center  place-items-center border-2 border-green-500 
             rounded-lg'><FaCartShopping className='text-xl'/>
             </div>
             </div>
