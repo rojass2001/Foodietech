@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Loginorregister from './Loginorregister'
 
 function Login() {
@@ -6,7 +6,7 @@ function Login() {
    
  return (
     <>
-    <Loginorregister link="/register" buttonname="Login" logdetails="youdont have account please register" />
+    <Loginorregister link="/register" buttonname="Login" logdetails="you dont have account please register" />
     </>
   )  
   

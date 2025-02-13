@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Categories from '../categories/Categories'
 import { useDispatch, useSelector } from 'react-redux'
 import { productpopup } from '../../redux/Popup'
@@ -16,7 +16,7 @@ function Searchfilter() {
       }
   return (
     <>
-    <div className='w-full mt-[80px]' data-aos="fade-up" data-aos-delay="300">
+    <div className='w-full mt-[80px]' >
     <Categories/>
     {filterproducts.length<1&&
     <div className='w-full min-h-screen pt-10 text-center text-3xl font-bold text-green-500'>No search Found</div>

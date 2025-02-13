@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
 import NavbarBanner from './NavbarBanner'
 import Mobilenavbar from './Mobilenavbar'
@@ -12,7 +12,6 @@ function Navbar() {
   const dispatch=useDispatch()
   const navigate=useNavigate()
   const[open,setopen]=useState(false)
- const {detail}=useSelector(state=>state.popup)
  const [searchs,setsearch]=useState("")
  const submit=(event)=>{
   event.preventDefault()

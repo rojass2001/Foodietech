@@ -13,10 +13,10 @@ function Categories() {
   }
   return (
     <>
-    <div className='w-full  md:justify-center   overflow-x-auto flex gap-[70px]' >
-    <div className='text-center text-green-500' data-aos="fade-right" delay={100}>
+    <div className='w-full mt-[120px] lg:mt-[80px] md:justify-center   overflow-x-auto flex gap-[70px]' >
+    <div className='text-center text-green-500'>
     <Link to="/reciepe"> 
-    <div className='bg-black w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-full p-3 border-2
+    <div className='bg-black w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full p-1  md:p-3 border-2
      border-green-500 '>
     <img  className='w-full h-full rounded-full' src={img}/>
     </div>
@@ -24,9 +24,9 @@ function Categories() {
     <p>All</p>
     </div>
     {category.map((a)=>(
-    <div className=' text-center text-green-500' key={a.name} data-aos="fade-right" delay={a.delay}>
-    <div  onClick={()=>search(a.name)}className='bg-black w-[50px] 
-      h-[50px] md:w-[80px] md:h-[80px] rounded-full p-3 border-2 border-green-500 ' >
+    <div className=' text-center text-green-500' key={a.name} >
+    <div  onClick={()=>search(a.name)}className='bg-black w-[60px] 
+      h-[60px] md:w-[80px] md:h-[80px] rounded-full p-1 md:p-3 border-2 border-green-500 ' >
     <img  className='w-full h-full rounded-full' src={a.image}/>
     </div>
     <p >{a.name}</p>
