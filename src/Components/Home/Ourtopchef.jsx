@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
 const topchef=[
 {image:"https://www.awesomecuisine.com/wp-content/uploads/2018/03/sanjeev_kapoor.jpg",name:"juan cruis",reciepe:"10",cusions:"Mexican",delay:"100"},

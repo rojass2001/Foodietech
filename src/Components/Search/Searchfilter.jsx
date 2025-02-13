@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { productpopup } from '../../redux/Popup'
 import { setproductdetails } from '../../redux/Productslice'
 import { addtocart } from '../../redux/Cartslice'
-import { FaIndianRupeeSign } from 'react-icons/fa6'
+import { FaCartShopping, FaIndianRupeeSign } from 'react-icons/fa6'
 
 function Searchfilter() {
     const {filterproducts}=useSelector(state=>state.product)
@@ -26,7 +26,7 @@ function Searchfilter() {
           {/* card reciepes*/}
           { filterproducts?.map((a)=>(
             <div onClick={()=>singleproduct(a)}  className='h-[250px]  text-green-500 border-2
-             bg-black rounded-lg space-y-1 text-center border-green-500 
+             bg-black rounded-lg space-y-2 text-center border-green-500 
              transform transition-all duration-300 hover:scale-110  '  key={a.id}>
               <img className='h-[50%] rounded-lg w-full' src={a.image} alt="hcncn"/>
               <p className='font-bold'>{a.name}</p>
@@ -35,7 +35,12 @@ function Searchfilter() {
               <p className='font-bold'>{a.price}</p>
               
               </div>
-              <button onClick={()=>dispatch(addtocart(a))}className=' p-1 border-2 border-green-500 rounded-lg'>add to cart</button>
+              <div className='w-full justify-center place-items-center'>
+                  <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center
+                    place-items-center border-2 border-green-500  rounded-lg'>
+                    <FaCartShopping className='text-xl'/>
+                    </div>
+               </div>
               
             </div>
            

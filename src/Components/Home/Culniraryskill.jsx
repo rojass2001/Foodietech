@@ -1,4 +1,4 @@
-import React from 'react'
+
  const learnreciepe=[{
 name:"Learn new reciepe",
 delay:"100"
@@ -31,7 +31,7 @@ function Culniraryskill() {
      <div className='w-full h-[250px] md:w-[40%]'>
         <img className='h-full w-full' data-aos="zoom-in" src="https://static.fanpage.it/wp-content/uploads/sites/22/2020/05/iStock-1093661558.jpg"/>
      </div>
-    <div className='w-full text-white font-bold h-[250px] md:w-[40%]'>
+    <div className='w-full text-green-500 font-bold h-[250px] md:w-[40%]'>
       <p className='text-3xl'>Improve Your</p>
       <p className='text-3xl'>Culniary Skills</p>
       {learnreciepe.map((a)=>(
@@ -41,7 +41,7 @@ function Culniraryskill() {
 
     </div>
     ))}
-     <button className='w-[80px] h-10 mt-5' style={{backgroundColor:"#7FFF00"}}>Sign up</button>
+     <button className='w-[80px] h-10 text-white mt-5' style={{backgroundColor:"#7FFF00"}}>Sign up</button>
     </div>
 </div>
 

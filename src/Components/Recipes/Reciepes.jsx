@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect,  } from 'react'
 import Categories from '../categories/Categories'
 import { useDispatch, useSelector } from 'react-redux'
 import { products } from '../../Reciepelist'
@@ -31,7 +31,8 @@ function Reciepes() {
         {/* card reciepes*/}
         { allproducts?.map((a)=>(
           <div onClick={()=>singleproduct(a)}  className='h-[250px] cursor-pointer  text-green-500 border-2
-           bg-black rounded-lg space-y-2 text-center justify-center place-items-center border-green-500  transform transition-all duration-300  hover:scale-110 '  key={a.id}>
+           bg-black rounded-lg space-y-2 text-center justify-center 
+            place-items-center border-green-500  transform transition-all duration-300  hover:scale-110 '  key={a.id}>
             <img className='h-[50%] rounded-lg w-full' src={a.image} alt="hcncn"/>
             <p className='font-bold'>{a.name}</p>
             <div className='w-full justify-center flex items-center'>
@@ -39,8 +40,10 @@ function Reciepes() {
             <p className='font-bold'>{a.price}</p>
             
             </div>
-            <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 flex items-center border-2 justify-center border-green-500 
+            <div className='w-full justify-center place-items-center'>
+            <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center  place-items-center border-2 border-green-500 
             rounded-lg'><FaCartShopping className='text-xl'/>
+            </div>
             </div>
             
           </div>

@@ -34,7 +34,8 @@ function Cart() {
        </div>
        <p className='flex items-center text-[15px]'><p>Subtotal:</p><span className='text-[15px]'>
         <FaIndianRupeeSign/></span>{a.subtotal}</p>
-        <FaTrash onClick={()=>dispatch(removecart(a))}/>
+        <div className=' w-16 h-8 border-2 place-content-center place-items-center border-green-500'>
+          <FaTrash onClick={()=>dispatch(removecart(a))}/></div>
         </div>
        
      </div>
