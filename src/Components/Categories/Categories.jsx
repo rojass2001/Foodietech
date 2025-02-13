@@ -1,4 +1,3 @@
-import React from 'react'
 import { category } from './categoryarray'
 import { useDispatch } from 'react-redux'
 import { productfilter } from '../../redux/Productslice'

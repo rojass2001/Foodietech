@@ -14,7 +14,7 @@ function Carttotal() {
     {totalprice}</span></div>
     <div className={cartclass}>Total:<span className='flex items-center'><FaIndianRupeeSign/>
     {totalprice}</span></div>
-   <div className='flex text-sm text-green-500 gap-1'>
+   <div className='w-full justify-center text-center flex text-sm text-green-500 gap-3'>
     <button className='border-2 font-bold  border-green-500 w-[120px] h-11'>paynow{totalprice}</button>
   <Link className='no-underline' to="/reciepe">
   <button className='border-2 font-bold  w-[120px] border-green-500 h-11'>continue to shop</button>

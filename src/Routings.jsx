@@ -8,6 +8,7 @@ import Searchfilter from './Components/Search/Searchfilter'
 import Footer from './Components/Footer'
 import Login from './Components/Loginorregister/Login'
 import Register from './Components/Loginorregister/Register'
+import Productdetail from './Components/Productdetail/Productdetail'
 function Routings() {
   return (
     <>
@@ -22,6 +23,7 @@ function Routings() {
     <Route path="/login" element={<Login/>}/>
     <Route path="/register" element={<Register/>}/>
     <Route path="/search" element={<Searchfilter/>}/>
+    <Route path="/details" element={<Productdetail/>}/>
     </Routes>
     <Footer/>
     </Router>

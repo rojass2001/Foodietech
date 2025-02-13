@@ -1,4 +1,4 @@
-import React from 'react'
+
 const hero=[{
   image:"https://coolfooddude.com/wp-content/uploads/2020/08/SFS_Classic_Sirloin_Blend_030-2-scaled.jpg",
   delay:"100"},
