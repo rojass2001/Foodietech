@@ -12,7 +12,7 @@ function Categories() {
   }
   return (
     <>
-    <div className='w-full mt-[120px] lg:mt-[80px] md:justify-center   overflow-x-auto flex gap-[70px]' >
+    <div className='w-full mt-[130px] lg:mt-[80px] md:justify-center   overflow-x-auto flex gap-[70px]' >
     <div className='text-center text-green-500'>
     <Link to="/reciepe"> 
     <div className='bg-black w-[60px] h-[60px] md:w-[80px] md:h-[80px] rounded-full p-1  md:p-3 border-2

@@ -39,7 +39,7 @@ function Searchfilter() {
               </div>
               <div className='w-full justify-center place-items-center'>
                   <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center
-                    place-items-center border-2 border-green-500  rounded-lg'>
+                    justify-center border-2 border-green-500 mx-auto  rounded-lg'>
                     <FaCartShopping className='text-xl'/>
                     </div>
                </div>
