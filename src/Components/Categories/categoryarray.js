@@ -1,7 +1,7 @@
 export const category=[
     
 {   
-    image:"http://www.pngall.com/wp-content/uploads/2016/05/Burger-PNG-Picture.png",
+    image:"https://cdn.pixabay.com/photo/2023/04/14/18/53/ai-generated-7925719_1280.jpg",
     name:"burger",
     
 },

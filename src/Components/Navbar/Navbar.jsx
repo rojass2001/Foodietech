@@ -34,7 +34,8 @@ navigate("/search")
       <Link to="/login"><li>Login</li></Link>
     </ul>
     <form className=" hidden md:flex " onSubmit={submit}>
-    <input className='w-[110px] md:w-[150px]' type="text" onChange={(e)=>setsearch(e.target.value)}/>
+    <input className='w-[110px] md:w-[150px]' placeholder='search product here' type="text" 
+    onChange={(e)=>setsearch(e.target.value)}/>
     <button type="submit" className='bg-green-500'>search</button>
     </form>
     <div className='flex gap-3 items-center'>

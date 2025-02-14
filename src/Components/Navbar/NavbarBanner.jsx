@@ -15,7 +15,7 @@ function NavbarBanner() {
   return (
     <>
     <form className='w-full justify-center px-3 shadow-md shadow-gray-500 flex h-[40px] md:hidden' onSubmit={submit}>
-    <input className='h-7 w-full' type="text" onChange={(e)=>setsearch(e.target.value)}/>
+    <input className='h-7 w-full' placeholder='search product here' type="text" onChange={(e)=>setsearch(e.target.value)}/>
     <button type='submit' className='bg-green-500 px-2 h-7 '>search</button>
     </form>
     </>
