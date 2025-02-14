@@ -41,7 +41,7 @@ function Reciepes() {
             </div>
             <div className='w-full text-center  justify-center place-items-center'>
             <div onClick={()=>dispatch(addtocart(a))}className=' mx-auto w-16 h-8 place-content-center text-center  place-items-center border-2 border-green-500 
-            rounded-lg'><FaCartShopping className='text-xl'/>
+            rounded-lg'><FaCartShopping className='text-xl mx-auto text-center'/>
             </div>
             </div>
             
