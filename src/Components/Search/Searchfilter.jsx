@@ -22,7 +22,7 @@ function Searchfilter() {
     <div className='w-full min-h-screen pt-10 text-center text-3xl font-bold text-green-500'>No search Found</div>
 
     }
-       <div className='w-full mt-5 px-2 md:px-6 min-h-screen  gap-10  grid md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
+       <div className='w-full mt-5 px-6 md:px-6 min-h-screen  gap-10  grid md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
           {/* card reciepes*/}
           { filterproducts?.map((a)=>(
             // eslint-disable-next-line react/jsx-key
@@ -38,9 +38,8 @@ function Searchfilter() {
               
               </div>
               <div className='w-full justify-center place-items-center'>
-                  <div onClick={()=>dispatch(addtocart(a))}className=' w-16 h-8 place-content-center
-                    justify-center text-center border-2 border-green-500 mx-auto  rounded-lg'>
-                    <FaCartShopping className='text-2xl '/>
+                  <div onClick={()=>dispatch(addtocart(a))}className=' w-[100px] h-[40px] place-content-center place-items-center text-center border-2 border-green-500 mx-auto  rounded-lg'>
+                    <FaCartShopping className='text-2xl mx-auto '/>
                     </div>
                </div>
               

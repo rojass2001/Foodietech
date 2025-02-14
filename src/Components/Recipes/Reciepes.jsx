@@ -23,7 +23,7 @@ function Reciepes() {
     <>
    <div className='w-full mt-[80px]'>
     <Categories/>
-  <div className='w-full mt-5 px-2 md:px-6  gap-10  grid md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+  <div className='w-full mt-5 px-6 md:px-6  gap-10  grid md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
     data-aos="fade-up" data-aos-delay="100">
         {/* card reciepes*/}
         { allproducts?.map((a)=>(
@@ -39,9 +39,10 @@ function Reciepes() {
             <p className='font-bold'>{a.price}</p>
             
             </div>
-            <div className='w-full text-center  justify-center place-items-center'>
-            <div onClick={()=>dispatch(addtocart(a))}className='w-16 h-8 place-content-center text-center  place-items-center border-2 border-green-500 
-            rounded-lg'><FaCartShopping className='text-xl '/>
+            <div className='w-full text-center py-1  justify-center place-items-center'>
+            <div onClick={()=>dispatch(addtocart(a))}className='w-[100px] h-[40px] text-center
+             place-items-center place-content-center  border-2 border-green-500 
+            rounded-lg'><FaCartShopping className='text-2xl mx-auto '/>
             </div>
             </div>
             
