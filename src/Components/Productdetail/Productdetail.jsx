@@ -16,15 +16,15 @@ const dispatch=useDispatch()
      <div className='space-y-2 text-green-500 font-bold 
       place-items-center text-center md:text-first md:place-items-start w-full  md:w-[50%]'>
       <p className='text-2xl'>{prodetail.name}</p>
-      <p className='text-xl flex items-center'><FaIndianRupeeSign/>{prodetail.price}</p>
+      <p className='w-full justify-center md:justify-start flex items-center text-xl'><FaIndianRupeeSign/>{prodetail.price}</p>
       <p className='md:text-start'>{prodetail.des}</p>
     <button onClick={()=>dispatch(decreaseproduct(prodetail.price))} 
     className={`rounded-l-full mr-2 ${quantitybutton }`}>-</button>
      {prodetail.quantity}
     <button onClick={()=>dispatch(increaseproduct(prodetail.price))}
     className={`rounded-r-full ml-2 ${quantitybutton }`}>+</button>
-    <p className='flex items-center'>Subtotal :<FaIndianRupeeSign className='mt-1'/> {prodetail.subtotal}</p>
-      <div className='flex items-center gap-2'>
+    <div className='w-full justify-center md:justify-start flex items-center'>Subtotal :<FaIndianRupeeSign className='mt-1'/> {prodetail.subtotal}</div>
+      <div className='w-full justify-center md:justify-start flex items-center  gap-2'>
      <button onClick={()=>dispatch(addtocart(prodetail))} className={button}>add to cart</button>
      <button className={button}>Buy now</button>
       </div>

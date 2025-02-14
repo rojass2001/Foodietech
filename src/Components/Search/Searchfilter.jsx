@@ -37,8 +37,8 @@ function Searchfilter() {
               <p className='font-bold'>{a.price}</p>
               
               </div>
-              <div className='w-full justify-center place-items-center'>
-                  <div onClick={()=>dispatch(addtocart(a))}className=' w-[100px] py-3 h-[40px] place-content-center place-items-center text-center border-2 border-green-500 mx-auto  rounded-lg'>
+              <div className='w-full justify-center '>
+                  <div onClick={()=>dispatch(addtocart(a))}className=' w-[100px] py-2 h-[40px] place-content-center place-items-center text-center border-2 border-green-500 mx-auto  rounded-lg'>
                     <FaCartShopping className='text-2xl mx-auto '/>
                     </div>
                </div>

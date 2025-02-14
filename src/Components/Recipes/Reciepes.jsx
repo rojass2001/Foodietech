@@ -39,12 +39,12 @@ function Reciepes() {
             <p className='font-bold'>{a.price}</p>
             
             </div>
-            <div className='w-full  justify-center place-items-center'>
-            <div onClick={()=>dispatch(addtocart(a))}className='w-[100px] h-[40px] text-center
-             place-items-center place-content-center py-2  border-2 border-green-500 rounded-lg'>
-              <FaCartShopping className='text-2xl mx-auto '/>
-            </div>
-            </div>
+
+            <div className='w-full justify-center '>
+                  <div onClick={()=>dispatch(addtocart(a))}className=' w-[100px] py-2 h-[40px] place-content-center place-items-center text-center border-2 border-green-500 mx-auto  rounded-lg'>
+                    <FaCartShopping className='text-2xl mx-auto '/>
+                    </div>
+               </div>
             
           </div>
           </Link>
