@@ -20,8 +20,8 @@ function Cart() {
       <div className='w-[100%] md:w-[60%]  transform transition-all duration-300  hover:scale-105'>
         {/* cart card */}
         {cartproducts.map((a)=>(
-      <div className='w-full flex border-2 border-green-500 mb-3 p-5 bg-black' key={a.id}>
-         <img className="w-[40%] h-[180px]"src={a.image}/>
+      <div className='w-full flex border-2 border-green-500 mb-3 p-1 md:p-5 bg-black' key={a.id}>
+         <img className="w-[45%] h-[180px]"src={a.image}/>
          <div className='w-[70%] pl-3 space-y-3 text-green-500 font-bold'>
          <p className='text-xl' >{a.name}</p>
       
@@ -34,7 +34,9 @@ function Cart() {
        <p className='flex items-center text-[15px]'><p>Subtotal:</p><span className='text-[15px]'>
         <FaIndianRupeeSign/></span>{a.subtotal}</p>
         <div className=' w-16 h-9 p-1 place-content-center place-items-center  border-2 border-green-500'>
-          <FaTrash className='mx-auto' onClick={()=>dispatch(removecart(a))}/></div>
+          <FaTrash className='mx-auto text-xl' onClick={()=>dispatch(removecart(a))}/>   
+          </div>
+          
         </div>
        
      </div>
