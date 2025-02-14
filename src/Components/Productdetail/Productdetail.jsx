@@ -24,7 +24,7 @@ const dispatch=useDispatch()
     <button onClick={()=>dispatch(increaseproduct(prodetail.price))}
     className={`rounded-r-full ml-2 ${quantitybutton }`}>+</button>
     <div className='w-full justify-center md:justify-start flex items-center'>Subtotal :<FaIndianRupeeSign className='mt-1'/> {prodetail.subtotal}</div>
-      <div className='w-full justify-center md:justify-start flex items-center  gap-2'>
+      <div className='w-full justify-center md:justify-start flex items-center    gap-2'>
      <button onClick={()=>dispatch(addtocart(prodetail))} className={button}>add to cart</button>
      <button className={button}>Buy now</button>
       </div>
