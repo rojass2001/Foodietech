@@ -44,7 +44,7 @@ navigate("/search")
     <FaCartShopping  className='text-green-500 text-2xl'/>
     {
       cartproducts.length>0&&
-      <div className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px]  right-[-5px] h-4'>{cartproducts.length}</div>
+      <div className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px]  right-[-5px] h-4 animate-bounce'>{cartproducts.length}</div>
     }
     </div> </Link>
     <MdMenu className='text-3xl text-green-500 md:hidden' onClick={()=>setopen(!open)}/>
