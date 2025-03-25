@@ -8,7 +8,8 @@ const INITIAL_STATE={
     allproducts:[],
     productcontain:[],
     filterproducts:[],
-    detail:false,
+    
+   
 };
  const productslice=createSlice({
 
@@ -22,7 +23,7 @@ const INITIAL_STATE={
             setproductdetails:(state,action)=>{
               const data={...action.payload,quantity:1,subtotal:action.payload.price}
               state.productcontain=data;
-
+         console.log(data)
                 },
             increaseproduct:(state,action)=>{
               state.productcontain.quantity+=1;
@@ -36,14 +37,14 @@ const INITIAL_STATE={
            
    },
    productfilter:(state,action)=>{
-      state.filterproducts=state.allproducts.filter((item)=>item.category===action.payload)
-          console.log(state.allproducts)
+       state.filterproducts=state.allproducts.filter((item)=>item.category===action.payload)
+         // console.log(state.allproducts)
    },
     searchproducts:(state,action)=>{
       state.filterproducts=state.allproducts.filter((item)=>item.name.toLowerCase().includes(action.payload.toLowerCase()))
         console.log(state.allproducts)
  },
-
+  
           }
    
     }

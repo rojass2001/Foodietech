@@ -1,14 +1,15 @@
 
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
-import Home from './Components/Home/Home'
+import Home from './Pages/Home'
 import Navbar from './Components/Navbar/Navbar'
-import Reciepes from './Components/Recipes/Reciepes'
-import Cart from './Components/Cart/Cart'
-import Searchfilter from './Components/Search/Searchfilter'
+import Reciepes from './Pages/Reciepes'
+import Cart from './Pages/Cart'
+import Searchfilter from './Pages/Searchfilter'
 import Footer from './Components/Footer'
-import Login from './Components/Loginorregister/Login'
-import Register from './Components/Loginorregister/Register'
-import Productdetail from './Components/Productdetail/Productdetail'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
+import Productdetail from './Pages/Productdetail'
+
 function Routings() {
   return (
     <>
@@ -24,6 +25,7 @@ function Routings() {
     <Route path="/register" element={<Register/>}/>
     <Route path="/search" element={<Searchfilter/>}/>
     <Route path="/details" element={<Productdetail/>}/>
+   
     </Routes>
     <Footer/>
     </Router>

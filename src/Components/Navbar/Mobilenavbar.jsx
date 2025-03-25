@@ -1,8 +1,7 @@
-
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+
 function Mobilenavbar({setopen}) {
-  
   return (
     <>
     

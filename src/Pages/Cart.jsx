@@ -1,9 +1,9 @@
 import { FaIndianRupeeSign, FaTrash } from 'react-icons/fa6'
 import { useDispatch, useSelector } from 'react-redux'
-import { cartincrease,cartdecrease, removecart } from '../../redux/Cartslice'
-import Carttotal from './Carttotal'
-import Cartempty from './Cartempty'
-import Cartheading from './Cartheading'
+import { cartincrease,cartdecrease, removecart } from '../redux/Cartslice'
+import Carttotal from '../Components/Cart/Carttotal'
+import Cartempty from '../Components/Cart/Cartempty'
+import Cartheading from '../Components/Cart/Cartheading'
 
 function Cart() {
   const quantitybutton="border-2 border-green-500 px-5"

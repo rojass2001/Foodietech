@@ -1,5 +1,5 @@
 
-import Loginorregister from './Loginorregister'
+import Loginorregister from '../Components/Loginorregister/Loginorregister'
 
 function Register() {
   return (
