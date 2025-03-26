@@ -61,7 +61,6 @@ removecart:(state,action)=>{
 }
 }
 }})
-
-         
+       
 export const {addtocart,cartincrease,cartdecrease,removecart}=cartslice.actions;
 export default cartslice.reducer;

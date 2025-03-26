@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
 import { FaCartShopping, FaIndianRupeeSign } from 'react-icons/fa6'
 import { addtocart } from '../redux/Cartslice'
 import { useDispatch } from 'react-redux'
@@ -11,7 +10,7 @@ function Card({product}) {
   return (
     <div>
       <Link to="/details">
-            <div onClick={()=>dispatch(setproductdetails(product))}  className='h-[250px]  text-green-500 border-2
+      <div onClick={()=>dispatch(setproductdetails(product))}  className='h-[250px]  text-green-500 border-2
              bg-black rounded-lg space-y-2 text-center border-green-500 
              transform transition-all duration-300 hover:scale-110  ' >
               <img className='h-[50%] rounded-lg w-full' src={product.image} alt="hcncn"/>
@@ -20,14 +19,15 @@ function Card({product}) {
               <FaIndianRupeeSign/>
               <p className='font-bold'>{product.price}</p>
               
-              </div>
-              <div className='w-full justify-center '>
-                  <div onClick={()=>dispatch(addtocart(product))}className=' w-[100px] py-2 h-[40px] place-content-center place-items-center text-center border-2 border-green-500 mx-auto rounded-lg'>
-                    <FaCartShopping className='text-2xl mx-auto '/>
                     </div>
-               </div>
+          <div className='w-full justify-center '>
+             <div onClick={()=>dispatch(addtocart(product))}className=' w-[100px] py-2 h-[40px] 
+              place-content-center place-items-center text-center border-2 border-green-500 mx-auto rounded-lg'>
+                <FaCartShopping className='text-2xl mx-auto '/>
+              </div>
+          </div>
               
-            </div>
+      </div>
             </Link>
     </div>
   )

@@ -15,7 +15,7 @@ const dispatch=useDispatch()
   return (
     
   <form className="flex w-full" onSubmit={submit}>
-      <input className='w-full h-7' onChange={(e)=>setsearch(e.target.value)} 
+      <input className='w-full h-8' onChange={(e)=>setsearch(e.target.value)} 
       placeholder='search product here' type="text"  />
       <button type="submit" className='bg-green-500 '>search</button>
   </form>

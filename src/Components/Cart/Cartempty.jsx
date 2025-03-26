@@ -1,4 +1,3 @@
-
 function Cartempty() {
   return (
     <div className='w-full pt-[70px] text-center min-h-screen'>

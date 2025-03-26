@@ -44,12 +44,8 @@ const INITIAL_STATE={
       state.filterproducts=state.allproducts.filter((item)=>item.name.toLowerCase().includes(action.payload.toLowerCase()))
         console.log(state.allproducts)
  },
-  
-          }
-   
-    }
-
- )
+ }
+  })
 
 export const {setproducts,setproductdetails,increaseproduct,decreaseproduct,productfilter,searchproducts}=productslice.actions;
 export default productslice.reducer;
