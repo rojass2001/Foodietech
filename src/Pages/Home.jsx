@@ -10,11 +10,11 @@ function Home() {
    <>
    
    <div className='w-full mt-[100px] md:[80px] px-2'>
-   <Hero/>
-   <Culniraryskill/>
-   <Foodquote/>
-   <Ourtopchef/>
-   <Service/>
+    <Hero/>
+    <Culniraryskill/>
+    <Foodquote/>
+    <Ourtopchef/>
+    <Service/>
    </div>
    </>
   )
