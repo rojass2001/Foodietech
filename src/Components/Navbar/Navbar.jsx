@@ -23,6 +23,7 @@ function Navbar() {
         <Link to="/"><li>Home</li></Link>
         <Link to="/reciepe"><li>Recipes</li></Link>
         <Link to="/login"><li>Login</li></Link>
+        <li>Logout</li>
       </ul>
 
       <div className='hidden md:flex w-[200px] '><Searchbar/></div>
