@@ -23,6 +23,7 @@ function Navbar() {
         <Link to="/"><li>Home</li></Link>
         <Link to="/reciepe"><li>Recipes</li></Link>
         <Link to="/login"><li>Login</li></Link>
+        <Link to="/logins"><li>Login</li></Link>
       </ul>
       <div className='hidden md:flex w-[200px] '><Searchbar/></div>
         <div className='flex gap-3 items-center'>
