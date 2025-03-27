@@ -6,14 +6,13 @@ import Reciepes from './Pages/Reciepes'
 import Cart from './Pages/Cart'
 import Searchfilter from './Pages/Searchfilter'
 import Footer from './Components/Footer'
+import Productdetail from './Pages/Productdetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
-import Productdetail from './Pages/Productdetail'
-import Logins from './Pages/Logins'
 
 function Routings() {
   return (
-    <>
+  <>
     <Router>
     <Navbar/>
   <Routes>
@@ -25,11 +24,10 @@ function Routings() {
     <Route path="/register" element={<Register/>}/>
     <Route path="/search" element={<Searchfilter/>}/>
     <Route path="/details" element={<Productdetail/>}/>
-    <Route path="/logins" element={<Logins/>}/>
   </Routes>
     <Footer/>
     </Router>
-    </>
+  </>
       
     
   )

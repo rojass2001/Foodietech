@@ -14,8 +14,8 @@ function Mobilenavbar({setopen}) {
    >
    <Link to="/"> <p onClick={()=>setopen()} className="mb-4"data-aos="fade-right" data-aos-delay="100">Home</p></Link>
    <Link to="/reciepe"> <p onClick={()=>setopen()} className="mb-4" data-aos="fade-right"  data-aos-delay="300">Reciepes</p></Link>
-   <Link to="/logins"> <p onClick={()=>setopen()} className="mb-4" data-aos="fade-right"  data-aos-delay="500">Logins</p></Link>
-   <Link to="/logins"> <p onClick={()=>setopen()} className="mb-4" data-aos="fade-right"  data-aos-delay="500">Logins</p></Link>
+   <Link to="/login"> <p onClick={()=>setopen()} className="mb-4" data-aos="fade-right"  data-aos-delay="500">Logins</p></Link>
+   <p data-aos="fade-right"  data-aos-delay="500">Logout</p>
     </motion.div>
 
     </>
