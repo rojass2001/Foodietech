@@ -11,8 +11,7 @@ function Navbar() {
   const[open,setopen]=useState(false)
 
   return (
-  <div>
-    <motion.div 
+  <motion.header
       initial={{opacity:0,y:-100}}
       animate={{opacity:1,y:0}}
       transition={{duration:0.8,delay:0.5}}
@@ -43,12 +42,12 @@ function Navbar() {
         {/*searchbar*/}
     <div className=' md:hidden w-full shadow-md p-2 shadow-gray-500  flex items-center
      place-content-center'><Searchbar/></div> 
-    {open&&
-    <Mobilenavbar  setopen={setopen}/>
-     }
-    </motion.div>
-    <div/>
-    </div>
+   
+        <Mobilenavbar setopen={setopen} open={open} />
+     
+ </motion.header>
+    
+  
   )
 }
 

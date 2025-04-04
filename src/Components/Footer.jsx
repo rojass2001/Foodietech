@@ -1,10 +1,9 @@
-import React from 'react'
 import { FaFacebook, FaGithubAlt, FaInstagram, FaTwitter } from 'react-icons/fa6'
 
 function Footer() {
   return (
-    <>
-    <div className='w-full mt-5 py-2 bg-slate-900 text-white grid gap-x-2 gap-y-2 md:gap-10 grid-cols-2 md:grid-cols-3'>
+    
+  <footer className='w-full mt-5 py-2 px-1 bg-slate-900 text-white grid gap-x-2 gap-y-2 md:gap-10 grid-cols-2 md:grid-cols-3'>
       <div className='h-[200px] text-sm pt-2 font-bold space-y-2 text-start md:text-center'>
         <p className='text-2xl  font-bold'>Foodies Hub</p> 
         <p>Foodies hub is aplace where you can where you can please  your soul and tummy with delicious food
@@ -31,8 +30,8 @@ function Footer() {
 
        </div>
       </div> 
-    </div>
-    </>
+   </footer>
+    
   )
 }
 
