@@ -1,6 +1,6 @@
 import  { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
-import Mobilenavbar from './Mobilenavbar'
+import Mobilenavbar from './mobiledrawer'
 import { MdMenu } from 'react-icons/md'
 import { Link, } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -11,7 +11,7 @@ function Navbar() {
   const[open,setopen]=useState(false)
 
   return (
-  <motion.header
+  <motion.nav
       initial={{opacity:0,y:-100}}
       animate={{opacity:1,y:0}}
       transition={{duration:0.8,delay:0.5}}
@@ -45,7 +45,7 @@ function Navbar() {
    
         <Mobilenavbar setopen={setopen} open={open} />
      
- </motion.header>
+ </motion.nav>
     
   
   )
