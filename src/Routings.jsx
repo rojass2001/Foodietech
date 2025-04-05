@@ -17,7 +17,7 @@ function Routings() {
     <Navbar/>
   <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/Foodietech" element={<Home/>}/>
+    <Route path="/foodietech" element={<Home/>}/>
     <Route path="/reciepe" element={<Reciepes/>}/>
     <Route path="/cart" element={<Cart/>}/>
     <Route path="/login" element={<Login/>}/>
