@@ -9,6 +9,7 @@ import Footer from './Components/Footer'
 import Productdetail from './Pages/Productdetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import Forgotpassword from './Pages/Forgotpassword'
 
 function Routings() {
   return (
@@ -21,7 +22,8 @@ function Routings() {
     <Route path="/reciepe" element={<Reciepes/>}/>
     <Route path="/cart" element={<Cart/>}/>
     <Route path="/login" element={<Login/>}/>
-    <Route path="/register" element={<Register/>}/>
+    <Route path="/register" element={<Register />} />
+    <Route path="/forgotpassword" element={<Forgotpassword/>} />
     <Route path="/search" element={<Searchfilter/>}/>
     <Route path="/details" element={<Productdetail/>}/>
   </Routes>

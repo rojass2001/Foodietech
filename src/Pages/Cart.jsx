@@ -1,12 +1,28 @@
-import { FaIndianRupeeSign, FaTrash } from 'react-icons/fa6'
+import {  FaTrash } from 'react-icons/fa6'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartincrease,cartdecrease, removecart } from '../redux/Cartslice'
 import Carttotal from '../Components/Cart/Carttotal'
 import Cartempty from '../Components/Cart/Cartempty'
 import Cartheading from '../Components/Cart/Cartheading'
+import { useEffect } from 'react'
+import Cookies from 'js-cookie'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 function Cart() {
-  const quantitybutton="border-2 border-green-500 px-5"
+  const quantitybutton = "border-2 border-green-500 px-5"
+  
+    const login =JSON.parse(Cookies.get('login'))
+  const navigate=useNavigate()
+  useEffect(() => {
+    console.log(login)
+    if (login===false||null) {
+      toast.warning("please login")
+      navigate('/login')
+    }
+    
+  },[])
+  
     const {cartproducts}=useSelector(state=>state.cart)
     const dispatch=useDispatch()
   return (

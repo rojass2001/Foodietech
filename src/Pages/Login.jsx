@@ -1,24 +1,29 @@
 import { Link } from 'react-router-dom'
+import useForm from '../Components/customhooks/useform'
+import useAuth from '../Backend/Firebase/firebaseauth'
 
 function Login() {
+   const [values, handlechanges] = useForm({
+    email: "",
+    password:""
+  })
+  const{loginsubmit}=useAuth(values.email,values.password)
+ 
+  console.log(values.email,values.password)
   return (
-    <div className='w-full pt-20  bg-black md:bg-gray-900 min-h-screen  flex items-center place-content-center'>
-      <div className='w-full md:w-[50%] rounded-2xl items-center place-content-center flex flex-col  bg-black py-20 px-10  min-h-[500px]'>
-      <div className='w-full h-9 text-sm flex mb-8 gap-3 items-center justify-center bg-white  rounded-full md:w-[60%]'>
-        <img className='h-6 w-6' src="https://imagepng.org/wp-content/uploads/2019/08/google-icon.png"/>
-       <p className='font-bold'>sign in with google</p>
-      </div>
-
-      <div className='w-full h-9 text-sm mb-8 flex gap-3 items-center justify-center bg-white  rounded-full md:w-[60%]'>
-        <img className='h-10 w-10' src="https://download.logo.wine/logo/Apple_Inc./Apple_Inc.-Logo.wine.png"/>
-       <p className='font-bold'>sign in with appleid</p>
-      </div>
-      <button className='w-full md:w-[60%] mb-8 font-bold h-9  rounded-full text-sm text-white bg-green-500  '>Next</button>
-      
-      <button className=' w-full text-green-400 mt-7 border-[1px] p-2 rounded-full border-green-500 md:w-[60%]'>forget password</button>
-    <Link to="/register"> <p className='mt-7 cursor-pointer text-green-400'>Dont have account Please register</p></Link>
-      </div>
-    </div>
+    <div className='w-full pt-10 bg-black md:bg-gray-900 min-h-screen  flex items-center place-content-center'>
+         <div className='w-full md:w-[50%] flex flex-col gap-12 px-10 py-20 items-center place-content-center
+           rounded-2xl bg-black min-h-[500px]'>
+           <input onChange={handlechanges} className='w-full bg-black border-[1px] pl-5 border-green-400 outline-none rounded-full
+           md:w-[70%] h-11 text-green-400' name="email" value={values.email} placeholder='enter your email' type="email" />
+           
+           <input onChange={handlechanges} className='w-full bg-black border-[1px] pl-5 border-green-400 outline-none rounded-full
+           md:w-[70%] text-green-400 h-11' name="password" placeholder='enter your password' type="password" />
+           <button onClick={loginsubmit} className='w-[70%] md:w-[50%] text-white rounded-full bg-green-500 p-2'>Login</button>
+           <Link to="/forgotpassword"><li className='text-green-400 list-none underline'>forgot password?</li></Link>
+            <Link to="/register"><li className='text-green-400 list-none underline'>don't have account please Register</li></Link> 
+         </div>
+       </div>
   )
 }
 
