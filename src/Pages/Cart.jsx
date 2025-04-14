@@ -9,22 +9,20 @@ import Cookies from 'js-cookie'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
+const quantitybutton = "border-2 border-green-500 px-5"
 function Cart() {
-  const quantitybutton = "border-2 border-green-500 px-5"
-  
-    const login =JSON.parse(Cookies.get('login'))
-  const navigate=useNavigate()
-  useEffect(() => {
-    console.log(login)
-    if (login===false||null) {
-      toast.warning("please login")
-      navigate('/login')
-    }
-    
-  },[])
-  
     const {cartproducts}=useSelector(state=>state.cart)
     const dispatch=useDispatch()
+    const login =JSON.parse(Cookies.get('login'))
+  const navigate=useNavigate()
+      useEffect(() => {
+        console.log(login)
+        if (login===false||null) {
+          toast.warning("please login")
+          navigate('/login')
+        } 
+      },[])
+  
   return (
     <>
   <div className='w-full mt-[80px] min-h-screen '>

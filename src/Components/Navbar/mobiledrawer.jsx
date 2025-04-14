@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import { motion,AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-
-function mobiledrawer({setopen,open}) {
+import { setlogout } from '../../redux/loginslice'
+import { useDispatch } from 'react-redux'
+function MobileDrawer({ setopen, open }) {
+  const dispatch=useDispatch()
   return (
     <>
-      <AnimatePresence mode='wait'>
+  <AnimatePresence mode='wait'>
         {open && (
       <motion.header
             initial={{ opacity: 0, x: -100 }}
@@ -14,16 +16,18 @@ function mobiledrawer({setopen,open}) {
             transition={{ duration: 0.3 }}
             className="absolute pl-5 text-white bg-green-500 top-0 h-screen 
              font-bold text-xl pt-16  left-0 w-[86%]  md:hidden"
-      >
-            <Link to="/"> <p onClick={() => setopen()} className="mb-4" data-aos="fade-right" data-aos-delay="100">Home</p></Link>
-            <Link to="/reciepe"> <p onClick={() => setopen()} className="mb-4" data-aos="fade-right" data-aos-delay="300">Reciepes</p></Link>
-            <Link to="/login"> <p onClick={() => setopen()} className="mb-4" data-aos="fade-right" data-aos-delay="500">Login</p></Link>
-            <Link to="/login"><p onClick={() => setopen()} data-aos="fade-right" data-aos-delay="500">Logout</p></Link>
-      </motion.header>
+          >
+            <ul className='list-none'>
+            <Link to="/"> <li onClick={() => setopen()} className="mb-4 " data-aos="fade-right" data-aos-delay="100">Home</li></Link>
+            <Link to="/reciepe"> <li onClick={() => setopen()} className="mb-4" data-aos="fade-right" data-aos-delay="300">Reciepes</li></Link>
+            <Link to="/login"> <li onClick={() => setopen()} className="mb-4" data-aos="fade-right" data-aos-delay="500">Login</li></Link>
+            <Link onClick={() => setopen()} to="/login"><li onClick={()=>dispatch(setlogout())}  data-aos="fade-right" data-aos-delay="500">Logout</li></Link>
+           </ul>
+          </motion.header>
         )}
-</AnimatePresence>
+  </AnimatePresence>
     </>
   )
 }
 
-export default mobiledrawer
+export default MobileDrawer
