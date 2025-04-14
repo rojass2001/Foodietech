@@ -1,12 +1,13 @@
-import useAuth from "../Backend/Firebase/firebaseauth"
-import useForm from "../Components/customhooks/useform"
-
+import useAuth from "../Components/customhooks/useAuth"
+import useInput from "../Components/customhooks/useInput"
 
 function Forgotpassword() {
-     const [values, handlechange] = useForm({
+    
+     const [values, handlechange] = useInput({
         email: "",
-      })
-    const{resetemail}=useAuth(values.email)
+     })
+  const { resetemail } = useAuth(values.email)
+  
   return (
      <div className='w-full pt-10 bg-black md:bg-gray-900 min-h-screen  flex items-center place-content-center'>
          <div className='w-full md:w-[50%] flex flex-col gap-12 px-10 py-20 items-center 

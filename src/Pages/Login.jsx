@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
-import useForm from '../Components/customhooks/useform'
-import useAuth from '../Backend/Firebase/firebaseauth'
+import useAuth from '../Components/customhooks/useAuth'
+import useInput from '../Components/customhooks/useInput'
 
 function Login() {
-   const [values, handlechanges] = useForm({
+  
+   const [values, handlechanges] = useInput({
     email: "",
     password:""
   })
   const{loginsubmit}=useAuth(values.email,values.password)
  
-  console.log(values.email,values.password)
   return (
     <div className='w-full pt-10 bg-black md:bg-gray-900 min-h-screen  flex items-center place-content-center'>
          <div className='w-full md:w-[50%] flex flex-col gap-12 px-10 py-20 items-center place-content-center

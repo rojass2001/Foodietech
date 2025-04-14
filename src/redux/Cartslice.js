@@ -32,7 +32,7 @@ const INITIAL_STATE={
          
     });
     state.totalprice+=newitem.subtotal?newitem.subtotal:newitem.price;  
-   toast.success(newitem.name +" added successfully to cart"); 
+   toast.success(newitem.name + "added successfully to cart"); 
    
 } },
   cartincrease:(state,action)=>{
