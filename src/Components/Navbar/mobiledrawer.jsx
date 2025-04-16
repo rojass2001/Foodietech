@@ -3,6 +3,7 @@ import { motion,AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { setlogout } from '../../redux/loginslice'
 import { useDispatch } from 'react-redux'
+
 function MobileDrawer({ setopen, open }) {
   const dispatch=useDispatch()
   return (

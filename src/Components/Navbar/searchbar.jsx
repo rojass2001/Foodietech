@@ -1,25 +1,13 @@
-import { useState } from "react"
-import { searchproducts } from "../../redux/Productslice"
-import { useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import useSearch from "../customhooks/useSearch"
+import Form from "../Form"
 
 function Searchbar() {
-  const [search,setsearch]=useState()
-const navigate=useNavigate()
-const dispatch=useDispatch()
-   const submit=(event)=>{
-    event.preventDefault()
-  dispatch(searchproducts(search)) 
-  navigate("/search")
-  } 
+  const{handlesearch,search,submit}=useSearch()
   return (
-    
-  <form className="flex w-full" onSubmit={submit}>
-      <input className='w-full h-8' onChange={(e)=>setsearch(e.target.value)} 
-      placeholder='search product here' type="text"  />
-      <button type="submit" className='bg-green-500 '>search</button>
-  </form>
-    
+  <Form className="flex w-full" >
+      <input className='w-full h-8' onChange={handlesearch}  value={search} placeholder='search product here' type="text"  />
+      <button type="submit" onClick={submit} className='bg-green-500 '>search</button>
+  </Form>   
   )
 }
 

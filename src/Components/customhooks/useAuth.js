@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { setlogin } from "../../redux/loginslice";
 import { useDispatch } from "react-redux";
-
+import Cookies from "js-cookie";
 export default function useAuth(email, password) {
     const dispatch=useDispatch()
     const navigate = useNavigate()
@@ -44,9 +44,17 @@ export default function useAuth(email, password) {
         }).catch(() => {
             toast.error("please enter valid email")
        });
-   }
-
-    return{registersubmit,loginsubmit,resetemail}
+    }
+    const cartauthentication = () => {
+        const login = JSON.parse(Cookies.get('login'))
+            console.log(login)
+            if (login === false || null) {
+                toast.warning("please login")
+                navigate('/login')
+            }
+      
+    }
+    return{registersubmit,loginsubmit,resetemail,cartauthentication}
 }
 
 
