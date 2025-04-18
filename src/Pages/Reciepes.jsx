@@ -1,11 +1,17 @@
 import Categories from '../Components/categories/Categories'
-import {  useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import Card from '../Components/Card'
+import { useEffect } from 'react'
+import { setproducts } from '../redux/Productslice'
+import { products } from '../Reciepelist'
 
 function Reciepes() {
- const {allproducts}=useSelector(state=>state.product)
-  return (
-    <>
+  const { allproducts } = useSelector(state => state.product)
+  const dispatch=useDispatch()
+  useEffect(()=> {
+    dispatch(setproducts(products))
+  },[dispatch])
+ return (
   <div className='w-full mt-[80px]'>
     <Categories/>
       <div className='w-full mt-5 px-6 md:px-6  gap-10  grid md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
@@ -16,8 +22,7 @@ function Reciepes() {
               ))}
         </div>
   </div>
-    </>
-  )
+ )
 }
 
 export default Reciepes

@@ -35,7 +35,6 @@ const INITIAL_STATE={
            },
        productfilter:(state,action)=>{
        state.filterproducts=state.allproducts.filter((item)=>item.category===action.payload)
-         // console.log(state.allproducts)
          },
        searchproducts:(state,action)=>{
        state.filterproducts=state.allproducts.filter((item)=>item.name.toLowerCase().includes(action.payload.toLowerCase()))

@@ -8,7 +8,8 @@ import Cookies from "js-cookie";
 export default function useAuth(email, password) {
     const dispatch=useDispatch()
     const navigate = useNavigate()
-     const registersubmit = async () => {
+    const registersubmit = async (e) => {
+         e.preventDefault()
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Success! user created
@@ -26,7 +27,8 @@ export default function useAuth(email, password) {
     }
 
 
-    const loginsubmit = async () => {
+    const loginsubmit = async (e) => {
+        e.preventDefault()
         try {
             await signInWithEmailAndPassword(auth, email, password)
             toast.success("successfully login")
@@ -37,7 +39,8 @@ export default function useAuth(email, password) {
                        toast.error("invalid username or password")
                      }
     }
-    const resetemail = () => {
+    const resetemail = (e) => {
+        e.preventDefault()
     sendPasswordResetEmail(auth, email)
        .then(() => {
            toast.success("successfully send link to email please check your email")
@@ -48,9 +51,9 @@ export default function useAuth(email, password) {
     const cartauthentication = () => {
         const login = JSON.parse(Cookies.get('login'))
             console.log(login)
-            if (login === false || null) {
-                toast.warning("please login")
+            if (!login) {
                 navigate('/login')
+                toast.warning("please login")
             }
       
     }
