@@ -31,28 +31,28 @@ export default function useAuth(email, password) {
         e.preventDefault()
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            toast.success("successfully login")
+            toast.success("successfully login");
             dispatch(setlogin())
             navigate('/reciepe')
      
             } catch {
-                       toast.error("invalid username or password")
+            toast.error("invalid username or password");
                      }
     }
     const resetemail = (e) => {
         e.preventDefault()
     sendPasswordResetEmail(auth, email)
        .then(() => {
-           toast.success("successfully send link to email please check your email")
+           toast.success("successfully send link to email please check your email");
         }).catch(() => {
-            toast.error("please enter valid email")
+            toast.error("please enter valid email");
        });
     }
     const cartauthentication = async() => {
         const login =await JSON.parse(Cookies.get('login'))
             if (!login) {
                 toast.warning("please login");
-                navigate('/login');
+                navigate('/login')
                  
         }
             else {

@@ -9,7 +9,7 @@ import useAuth from '../Components/customhooks/useAuth'
 const quantitybutton = "border-2 border-green-500 px-5"
 
 function Cart() {
-  const { cartauthentication } = useAuth()
+  const {cartauthentication} = useAuth()
   const dispatch=useDispatch()
   const {cartproducts}=useSelector(state=>state.cart)
       useEffect(() => {

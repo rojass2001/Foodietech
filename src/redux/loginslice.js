@@ -19,7 +19,7 @@ const loginslice= createSlice({
             console.log(login)
             if (login===true) {
                  Cookies.set('login', JSON.stringify(false), { expires: 30 });
-                toast.success("sucessfully logout");
+                 toast.success("sucessfully logout");
             }
             else {
                 toast.warning("please login first");
