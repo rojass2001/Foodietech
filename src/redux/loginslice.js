@@ -15,10 +15,10 @@ const loginslice= createSlice({
                   Cookies.set('login', JSON.stringify(true), { expires: 30 });
         },
         setlogout: async() => {
-            const login = await JSON.parse(Cookies.get('login'))
+            const login = await JSON.parse(Cookies.get('login'));
             console.log(login)
             if (login===true) {
-                Cookies.set('login', JSON.stringify(false), { expires: 30 });
+                 Cookies.set('login', JSON.stringify(false), { expires: 30 });
                 toast.success("sucessfully logout");
             }
             else {

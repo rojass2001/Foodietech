@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../Backend/Firebase/Firebase"
-import { useNavigate } from "react-router-dom";
+import { Await, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { setlogin } from "../../redux/loginslice";
 import { useDispatch } from "react-redux";
@@ -48,13 +48,15 @@ export default function useAuth(email, password) {
             toast.error("please enter valid email")
        });
     }
-    const cartauthentication = () => {
-        const login = JSON.parse(Cookies.get('login'))
-            console.log(login)
+    const cartauthentication = async() => {
+        const login =await JSON.parse(Cookies.get('login'))
             if (!login) {
                 navigate('/login')
                 toast.warning("please login")
-            }
+        }
+            else {
+                navigate("/cart")
+             }
       
     }
     return{registersubmit,loginsubmit,resetemail,cartauthentication}
