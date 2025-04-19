@@ -1,7 +1,4 @@
-import  { useState } from 'react'
 import { FaCartShopping } from 'react-icons/fa6'
-import Mobilenavbar from './mobiledrawer'
-import { MdMenu } from 'react-icons/md'
 import { Link, } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
@@ -11,10 +8,9 @@ import Loginicon from './Loginicon'
 
 function Navbar() {
   const{cartproducts}=useSelector(state=>state.cart)
-  const[open,setopen]=useState(false)
   const dispatch=useDispatch()
-  return (
-  <motion.nav
+return (
+ <motion.nav
       initial={{opacity:0,y:-100}}
       animate={{opacity:1,y:0}}
       transition={{duration:0.8,delay:0.5}}
@@ -46,7 +42,6 @@ function Navbar() {
         {/*searchbar*/}
     <div className=' md:hidden w-full shadow-md p-2 shadow-gray-500  flex items-center
      place-content-center'><Searchbar/></div> 
-        <Mobilenavbar setopen={setopen} open={open} />
  </motion.nav>
     
   
