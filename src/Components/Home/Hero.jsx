@@ -1,5 +1,5 @@
-
 import { hero } from "./Heroarray"
+
 function Hero() {
   return (
     <div className='w-full mt-5 flex  flex-col  md:flex-row '>

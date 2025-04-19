@@ -19,7 +19,7 @@ function Culniraryskill() {
     </div>
     ))}
     <Link to="/login">
-     <button className='w-[80px] h-10 text-white mt-5' style={{backgroundColor:"#7FFF00"}}>Sign up</button></Link>
+     <button className='w-[80px] h-10 text-white mt-5' style={{backgroundColor:"#7FFF00"}}>Sign in</button></Link>
     </div>
 </div>
 

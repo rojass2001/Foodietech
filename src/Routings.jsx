@@ -10,6 +10,8 @@ import Productdetail from './Pages/Productdetail'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import Forgotpassword from './Pages/Forgotpassword'
+import Tabbar from './Components/Tabbar'
+import Contact from './Pages/Contact'
 
 function Routings() {
   return (
@@ -19,7 +21,8 @@ function Routings() {
   <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/foodietech" element={<Home/>}/>
-    <Route path="/reciepe" element={<Reciepes/>}/>
+    <Route path="/reciepe" element={<Reciepes />} />
+    <Route path="/contact" element={<Contact />} />
     <Route path="/cart" element={<Cart/>}/>
     <Route path="/login" element={<Login/>}/>
     <Route path="/register" element={<Register />} />
@@ -27,6 +30,7 @@ function Routings() {
     <Route path="/search" element={<Searchfilter/>}/>
     <Route path="/details" element={<Productdetail/>}/>
   </Routes>
+  <Tabbar/>      
     <Footer/>
     </Router>
   </>

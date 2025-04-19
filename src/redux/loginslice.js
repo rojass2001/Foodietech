@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Cookies from 'js-cookie';
 
 const INITIAL_STATE={
-    //login:false
+    login:false
    
 };
 const loginslice= createSlice({
@@ -12,17 +12,17 @@ const loginslice= createSlice({
     initialState: INITIAL_STATE,
     reducers: {
         setlogin:async () => { 
-                  Cookies.set('login', JSON.stringify(true), { expires: 7 });
+                  Cookies.set('login', JSON.stringify(true), { expires: 30 });
         },
         setlogout: async() => {
-            const login=await JSON.parse(Cookies.get('login'))
+            const login = await JSON.parse(Cookies.get('login'))
             console.log(login)
             if (login===true) {
-                 Cookies.set('login', JSON.stringify(false), { expires: 7 });
-               toast.success("sucessfully logout")
+                Cookies.set('login', JSON.stringify(false), { expires: 30 });
+                toast.success("sucessfully logout");
             }
             else {
-                 toast.warning("please login first")
+                toast.warning("please login first");
             }
             
         },
