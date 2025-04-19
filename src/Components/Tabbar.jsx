@@ -3,11 +3,10 @@ import { FaShop } from "react-icons/fa6";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { IoIosContact } from "react-icons/io";
-import { useDispatch } from "react-redux";
-import { setlogout } from "../redux/loginslice";
+import useAuth from "./customhooks/useAuth";
 
 function Tabbar() {
-const dispatch=useDispatch()
+ const{logout}=useAuth()
   return (
   <div className="w-full p-1 flex items-center place-content-center text-green-600 h-[70px] pt-2 fixed z-50 bottom-0 right-0 left-0  md:hidden">
     <div className='w-[97%]  flex justify-around py-1 rounded-3xl  items-center place-content-center bg-black  ' >
@@ -18,9 +17,10 @@ const dispatch=useDispatch()
         <button className='flex items-center text-sm place-content-center flex-col'>< FaShop className='text-2xl' />shop</button>
       </Link>
       <Link to="/contact">
-        <button  className='flex items-center text-sm place-content-center flex-col'><IoIosContact className='text-2xl' />logout</button>
+        <button  className='flex items-center text-sm place-content-center flex-col'><IoIosContact className='text-2xl' />contact</button>
       </Link>
-      <Link to="/login" ><button onClick={()=>dispatch(setlogout())} className='flex items-center text-sm place-content-center flex-col'><IoSettingsOutline className='text-2xl' />logout</button>
+      <Link to="/login" >
+        <button onClick={logout} className='flex items-center text-sm place-content-center flex-col'><IoSettingsOutline className='text-2xl' />logout</button>
       </Link>
     </div>
   </div>

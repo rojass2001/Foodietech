@@ -1,12 +1,10 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../../Backend/Firebase/Firebase"
-import { Await, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { setlogin } from "../../redux/loginslice";
-import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
+
 export default function useAuth(email, password) {
-    const dispatch=useDispatch()
     const navigate = useNavigate()
     const registersubmit = async (e) => {
          e.preventDefault()
@@ -70,7 +68,7 @@ export default function useAuth(email, password) {
                 toast.warning("please login first");
                 }
         }
-    return{registersubmit,loginsubmit,resetemail,cartauthentication,logout}
+    return{ registersubmit,loginsubmit,resetemail,cartauthentication,logout }
 }
 
 

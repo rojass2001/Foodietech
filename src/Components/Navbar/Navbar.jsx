@@ -26,14 +26,16 @@ return (
       <div className='hidden md:flex w-[200px] '><Searchbar/></div>
         <div className='flex gap-3 items-center'>
           <Loginicon/>
-          <Link to="/cart"className='relative'>
+      <Link to="/cart">
+        <button className='relative'>
               <FaCartShopping  className='text-green-500 text-2xl mt-1'/>
               {
               cartproducts.length>0&&
               <div className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px]  right-[-5px] h-4
               animate-bounce'>{cartproducts.length}</div>
-             }
-          </Link>
+              }
+          </button>
+      </Link>
           
         </div>
     </div>
