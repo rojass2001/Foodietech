@@ -30,10 +30,10 @@ export default function useAuth(email, password) {
     const loginsubmit = async (e) => {
         e.preventDefault()
         try {
-            await signInWithEmailAndPassword(auth, email, password)
-            toast.success("successfully login");
-            dispatch(setlogin())
-            navigate('/reciepe')
+               await signInWithEmailAndPassword(auth, email, password);
+                Cookies.set('login', JSON.stringify(true), { expires: 7 });
+                toast.success("login successfully");
+                navigate('/reciepe')
      
             } catch {
             toast.error("invalid username or password");
@@ -49,7 +49,7 @@ export default function useAuth(email, password) {
        });
     }
     const cartauthentication = async() => {
-        const login =await JSON.parse(Cookies.get('login'))
+         const login = Cookies.get('login') ? await JSON.parse(Cookies.get('login')) : null;
             if (!login) {
                 toast.warning("please login");
                 navigate('/login')
@@ -60,7 +60,17 @@ export default function useAuth(email, password) {
              }
       
     }
-    return{registersubmit,loginsubmit,resetemail,cartauthentication}
+    const logout =async () => {
+        const login = Cookies.get('login') ? await JSON.parse(Cookies.get('login')) : null;
+            if (login === true) {
+            Cookies.set('login', JSON.stringify(false),{ expires: 7});
+                toast.success("sucessfully logout");
+            }
+            else {
+                toast.warning("please login first");
+                }
+        }
+    return{registersubmit,loginsubmit,resetemail,cartauthentication,logout}
 }
 
 

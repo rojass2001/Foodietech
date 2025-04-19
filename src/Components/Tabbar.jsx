@@ -20,7 +20,7 @@ const dispatch=useDispatch()
       <Link to="/contact">
         <button  className='flex items-center text-sm place-content-center flex-col'><IoIosContact className='text-2xl' />logout</button>
       </Link>
-      <Link to="/login" onClick={()=>dispatch(setlogout())} className='flex items-center text-sm place-content-center flex-col'><IoSettingsOutline className='text-2xl' />logout
+      <Link to="/login" ><button onClick={()=>dispatch(setlogout())} className='flex items-center text-sm place-content-center flex-col'><IoSettingsOutline className='text-2xl' />logout</button>
       </Link>
     </div>
   </div>

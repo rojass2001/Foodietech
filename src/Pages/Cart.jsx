@@ -13,7 +13,7 @@ function Cart() {
   const dispatch=useDispatch()
   const {cartproducts}=useSelector(state=>state.cart)
       useEffect(() => {
-       cartauthentication()
+        cartauthentication()
       },[])
   return (
   <div className='w-full mt-[80px] min-h-screen '>
