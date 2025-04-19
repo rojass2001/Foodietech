@@ -1,8 +1,8 @@
 
 import { servicearray } from './Servicearray'
 function Service() {
-  return (
-    <div className='w-full mt-5 '>
+return (
+  <div className='w-full mt-5 py-3 '>
     <p className='text-3xl font-bold text-green-500 text-center'>Our Service</p>
     <div className='w-full grid mt-5 gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-5'>
       {servicearray.map((a)=>(
@@ -15,8 +15,8 @@ function Service() {
       ))}
     </div>
    
-    </div>
-  )
+  </div>
+ )
 }
 
 export default Service

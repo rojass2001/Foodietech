@@ -4,9 +4,9 @@ function Contact() {
 return (
  <div className='w-full pt-[100px] md:pt-0'>  
   <div className='w-full  bg-black py-20  px-2 md:px-12 '>
-     <Form className='w-full space-y-3  border-2 border-green-500 py-12 px-1 md:px-[100px]'>
+     <Form className='w-full space-y-3  md:border-2  md:border-green-500 py-12 px-1 md:px-[100px]'>
         <p className='font-bold mb-5 text-center md:text-start  text-[24px]'>Fill Up The Form</p>
-        <div className='w-full gap-12  flex flex-col md:flex-row   '>
+        <div className='w-full gap-8  flex flex-col md:flex-row md:gap-12   '>
           <input className='md:w-[60%] font-bold h-10 border-[1px] placeholder-green-500 bg-black text-green-500 border-green-600 outline-none  w-full' required placeholder='Name' type="text" />
           <input required className='md:w-[60%] h-10 text-green-500 placeholder-green-500 bg-black font-bold border-[1px] border-green-600 outline-none w-full' type="email" placeholder='Email' />
         </div>

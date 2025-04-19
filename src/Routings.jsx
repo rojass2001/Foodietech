@@ -16,23 +16,23 @@ import Contact from './Pages/Contact'
 function Routings() {
   return (
   <>
-    <Router>
+  <Router>
     <Navbar/>
-  <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/foodietech" element={<Home/>}/>
-    <Route path="/reciepe" element={<Reciepes />} />
-    <Route path="/contact" element={<Contact />} />
-    <Route path="/cart" element={<Cart/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/register" element={<Register />} />
-    <Route path="/forgotpassword" element={<Forgotpassword/>} />
-    <Route path="/search" element={<Searchfilter/>}/>
-    <Route path="/details" element={<Productdetail/>}/>
-  </Routes>
-  <Tabbar/>      
-    <Footer/>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/foodietech" element={<Home/>}/>
+      <Route path="/reciepe" element={<Reciepes />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/cart" element={<Cart/>}/>
+      <Route path="/login" element={<Login/>}/>
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgotpassword" element={<Forgotpassword/>} />
+      <Route path="/search" element={<Searchfilter/>}/>
+      <Route path="/details" element={<Productdetail/>}/>
+    </Routes>     
+  <Footer />
+  <Tabbar/> 
+ </Router>
   </>
       
     

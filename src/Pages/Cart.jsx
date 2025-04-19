@@ -16,7 +16,7 @@ function Cart() {
         cartauthentication()
       },[])
   return (
-  <div className='w-full mt-[80px] min-h-screen '>
+  <div className='w-full mt-[85px] min-h-screen '>
     <Cartheading/>
     {
       cartproducts.length<1?<Cartempty/> :
