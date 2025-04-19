@@ -51,8 +51,9 @@ export default function useAuth(email, password) {
     const cartauthentication = async() => {
         const login =await JSON.parse(Cookies.get('login'))
             if (!login) {
-                navigate('/login')
-                toast.warning("please login")
+                toast.warning("please login");
+                navigate('/login');
+                 
         }
             else {
                 navigate("/cart")
