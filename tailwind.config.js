@@ -7,5 +7,8 @@ export default {
   theme: {
     extend: {},
   },
+  corePlugins: {
+     safeArea: true,
+  },
   plugins: [],
 }
