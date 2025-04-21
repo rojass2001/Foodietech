@@ -16,7 +16,6 @@ function Tabbar() {
     <>
       {!isKeyboardOpen&&
         <div className={`md:hidden w-full pt-2  flex items-center place-content-center text-green-600 h-[70px] fixed z-50 bottom-0 right-0 left-0`}>
-       
           <div className='w-[97%]  flex justify-around py-1 rounded-3xl  items-center place-content-center bg-black  ' >
             <Link to="/"><button onClick={()=>changestatus(0) } className={`flex items-center text-sm place-content-center flex-col ${click===0?"font-bold":""}`}><FaHome className='text-2xl ' />Home</button></Link>
             <Link to="/reciepe">

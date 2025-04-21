@@ -15,7 +15,7 @@ function Home() {
   },[dispatch])
   return (
   <>
-    <div className='w-full mt-[100px] md:[80px] px-2'>
+    <div className='w-full mt-[120px] md:[80px] px-2'>
       <Hero/>
       <Culniraryskill/>
       <Foodquote/>
