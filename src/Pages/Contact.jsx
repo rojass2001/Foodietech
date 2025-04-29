@@ -1,6 +1,6 @@
 import Box from '../Components/Box'
 import Button from '../Components/Button'
-import useAuthentication from '../Components/customhooks/useAuth'
+import useAuthentication from '../customhooks/useAuth'
 import Form from '../Components/Form'
 import Text from '../Components/Text'
 

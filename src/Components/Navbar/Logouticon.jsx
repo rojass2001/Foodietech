@@ -1,7 +1,7 @@
 import { IoSettingsOutline } from "react-icons/io5";
 import Box from "../Box";
 import Button from "../Button";
-import useAuthentication from "../customhooks/useAuth";
+import useAuthentication from "../../customhooks/useAuth";
 import { Link } from "react-router-dom";
 import { HiOutlineUser } from 'react-icons/hi'
 

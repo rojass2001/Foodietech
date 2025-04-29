@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { productfilter, searchproducts } from "../../redux/Productslice"
+import { productfilter, searchproducts } from "../redux/Productslice"
 
 function useSearch() {
   const [search, setsearch] = useState()

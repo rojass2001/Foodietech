@@ -1,17 +1,14 @@
-import { FaCartShopping } from 'react-icons/fa6'
 import { Link, } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 import Searchbar from './searchbar'
 import Loginicon from './Loginicon'
 import Box from '../Box'
 import Text from '../Text'
-import Button from '../Button'
 import Logouticon from './Logouticon'
+import Carticon from './Carticon'
 
 function Navbar() {
-  const{cartproducts}=useSelector(state=>state.cart)
-return (
+ return (
  <motion.nav
       initial={{opacity:0,y:-100}}
       animate={{opacity:1,y:0}}
@@ -24,21 +21,12 @@ return (
         <Link to="/reciepe"><li>Recipes</li></Link>
         <Link to="/contact"><li>Contact</li></Link>
       </ul>
-      <Box className='hidden md:flex w-[200px] '><Searchbar/></Box>
+      <Box className='hidden md:flex w-[200px] '> <Searchbar/> </Box>
       <Box className='flex gap-3 items-center'>
         <Loginicon />
         <Logouticon/>
-        <Link to="/cart">
-         <Button className='relative'>
-          <FaCartShopping  className='text-green-500 text-2xl mt-1'/>
-            {
-             cartproducts.length>0&&
-             <Box className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px]  right-[-5px] h-4
-                animate-bounce'>{cartproducts.length}</Box>
-            }
-         </Button>
-         </Link>
-        </Box>
+        <Carticon/> 
+      </Box>
     </Box>
         {/*searchbar*/}
     <Box className=' md:hidden w-full shadow-md p-2 shadow-gray-500  flex items-center place-content-center'>

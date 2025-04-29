@@ -18,7 +18,7 @@ function Carttotal() {
           <Button className='border-2 font-bold  w-[120px] border-green-500 h-11'>continue to shop</Button>
         </Link> 
       </Box> 
-    </Box>
+  </Box>
     
   )
 }
