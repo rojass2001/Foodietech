@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setproducts } from '../redux/Productslice'
 import { products } from '../Reciepelist'
+import Box from '../Components/Box'
 
 function Home() {
   const dispatch=useDispatch()
@@ -15,13 +16,13 @@ function Home() {
   },[dispatch])
   return (
   <>
-    <div className='w-full mt-[120px] md:[80px] px-2'>
+    <Box className='w-full mt-[120px] md:[80px] px-2'>
       <Hero/>
       <Culniraryskill/>
       <Foodquote/>
       <Ourtopchef/>
       <Service/>   
-    </div>
+    </Box>
   </>
   )
 }

@@ -4,7 +4,7 @@ import {  useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 
-export default function useAuth(email, password) {
+export default function useAuthentication(email, password) {
     const navigate = useNavigate()
     const registersubmit = async (e) => {
          e.preventDefault()
@@ -31,7 +31,7 @@ export default function useAuth(email, password) {
                await signInWithEmailAndPassword(auth, email, password);
                 Cookies.set('login', JSON.stringify(true), { expires: 7 });
                 toast.success("login successfully");
-                navigate('/reciepe')
+                navigate("/reciepe")
      
             } catch {
             toast.error("invalid username or password");
@@ -50,8 +50,7 @@ export default function useAuth(email, password) {
          const login = Cookies.get('login') ? await JSON.parse(Cookies.get('login')) : null;
             if (!login) {
                 toast.warning("please login");
-                navigate('/login')
-                 
+                navigate('/login')     
         }
             else {
                 navigate("/cart")
@@ -67,8 +66,12 @@ export default function useAuth(email, password) {
             else {
                 toast.warning("please login first");
                 }
-        }
-    return{ registersubmit,loginsubmit,resetemail,cartauthentication,logout }
+    }
+     const contactsubmit = (e) => {
+         e.preventDefault()
+         toast.success("message submit sucessfully")
+     }
+    return{ registersubmit,loginsubmit,resetemail,cartauthentication,logout,contactsubmit }
 }
 
 

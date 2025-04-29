@@ -6,6 +6,8 @@ import Cartempty from '../Components/Cart/Cartempty'
 import Cartheading from '../Components/Cart/Cartheading'
 import { useEffect } from 'react'
 import useAuth from '../Components/customhooks/useAuth'
+import Box from '../Components/Box'
+import Text from '../Components/Text'
 const quantitybutton = "border-2 border-green-500 px-5"
 
 function Cart() {
@@ -16,37 +18,35 @@ function Cart() {
         cartauthentication()
       },[])
   return (
-  <div className='w-full mt-[85px] min-h-screen '>
+  <Box className='w-full mt-[85px] min-h-screen '>
     <Cartheading/>
     {
       cartproducts.length<1?<Cartempty/> :
-     
-    <div className='w-full justify-center flex flex-col-reverse gap-4 md:flex-row p-2 md:gap-14 '>
-        <div className='w-[100%] md:w-[60%]  transform transition-all duration-300  hover:scale-105'>
+    <Box className='w-full justify-center flex flex-col-reverse gap-4 md:flex-row p-2 md:gap-14 '>
+      <Box className='w-[100%] md:w-[60%]  transform transition-all duration-300  hover:scale-105'>
             {/* cart card */}
-          {cartproducts.map((a)=>(
-          <div className='w-full flex border-2 border-green-500 mb-3 p-1 md:p-5 bg-black' key={a.id}>
-              <img className="w-[45%] h-[180px]"src={a.image}/>
-            <div className='w-[70%] pl-3 space-y-3 text-green-500 font-bold'>
-                <p className='text-xl' >{a.name}</p>
-                <p className='flex  text-[19px]'>₹{a.price}</p>
-                <div className='flex items-center gap-1'> 
+        {cartproducts.map((a)=>(
+          <Box className='w-full flex border-2 border-green-500 mb-3 p-1 md:p-5 bg-black' key={a.id}>
+           <img className="w-[45%] h-[180px]"src={a.image}/>
+           <Box className='w-[70%] pl-3 space-y-3 text-green-500 font-bold'>
+              <Text className='text-xl' >{a.name}</Text>
+              <Text className='flex  text-[19px]'>₹{a.price}</Text>
+              <Box className='flex items-center gap-1'> 
                   <button onClick={()=>dispatch(cartdecrease(a.id))} className={quantitybutton}>-</button>
                   {a.quantity}<button onClick={()=>dispatch(cartincrease(a.id))} className={quantitybutton}>+</button>
-              </div>
-              <p className='flex items-center text-[15px]'>Subtotal:₹{a.subtotal}</p>
-                <div className=' w-16 h-9 p-1 place-content-center place-items-center  border-2 border-green-500'>
-                  <FaTrash className='mx-auto text-xl' onClick={()=>dispatch(removecart(a))}/>   
-                </div>
-                
-            </div>
-          </div>
-          )) }
-       </div>
+              </Box>
+              <Text className='flex items-center text-[15px]'>Subtotal:₹{a.subtotal}</Text>
+              <Box className=' w-16 h-9 p-1 place-content-center place-items-center  border-2 border-green-500'>
+                <FaTrash className='mx-auto text-xl' onClick={()=>dispatch(removecart(a))}/>   
+              </Box>
+            </Box>
+          </Box>
+        )) }
+       </Box>
         <Carttotal/>
-      </div>
+    </Box>
       }
-    </div>
+    </Box>
   )
 }
 
