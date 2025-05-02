@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { memo } from "react"
 
 function Button({className,onClick,children,type,style}) {
   return (
@@ -9,4 +8,4 @@ function Button({className,onClick,children,type,style}) {
   )
 }
 
-export default memo (Button)
+export default Button

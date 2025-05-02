@@ -1,12 +1,13 @@
-import { memo } from "react"
+/* eslint-disable react/prop-types */
 
-// eslint-disable-next-line react/prop-types
-function Box({className,children,onClick,}) {
+function Box({className,children,onClick}) {
   return (
+    <>
     <div className={className} onClick={onClick}>
       {children}
-    </div>
+      </div>
+    </>
   )
 }
 
-export default memo(Box)
+export default Box

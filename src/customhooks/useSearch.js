@@ -8,21 +8,30 @@ function useSearch() {
   const navigate=useNavigate()
   const dispatch = useDispatch()
     
-   const submit=useCallback((event)=>{
-     event.preventDefault()
-     dispatch(searchproducts(search)) 
-     navigate("/search")
-    },[search,dispatch,navigate])
-    
-      const categorysearch=useCallback((name)=>{
-        dispatch(productfilter(name))
-        navigate('/search')
-      },[dispatch,navigate])
-  const handlesearch = useCallback((e) => {
-    setsearch(e.target.value);
-  }, []);
-  return{submit,handlesearch,search,categorysearch}
+  // Submit search for a product
+  const submit = useCallback(
+    (e) => {
+      e.preventDefault();
+        dispatch(searchproducts(search.trim()));
+        navigate("/search");
+    },
+    [dispatch, navigate, search]
+  );
+
+      // Filter products by selected category and navigate to search results
+      const categorysearch = useCallback(
+        (name) => {
+          dispatch(productfilter(name))
+          navigate('/search')
+        },
+        [dispatch, navigate]
+      )
+
+      // Update search state on input change
+      const handlesearch = useCallback((e) => {
+        setsearch(e.target.value)
+      }, [])
+
+  return{submit, handlesearch, search, categorysearch}
 }
 export default useSearch
-
-

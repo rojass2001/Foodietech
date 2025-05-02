@@ -5,19 +5,26 @@ import Box from '../Box'
 import { useSelector } from 'react-redux'
 
 function Carticon() {
-     const{cartproducts}=useSelector(state=>state.cart)
+  // Get cart products from the Redux store
+  const { cartproducts } = useSelector(state => state.cart)
+
   return (
     <>
-  <Link to="/cart">
-    <Button className='relative'>
-      <FaCartShopping  className='text-green-500 text-2xl mt-1'/>
-        {cartproducts.length>0&&
-          <Box className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px]  right-[-5px] h-4 animate-bounce'>
-            {cartproducts.length}
-          </Box>
-         }
-    </Button>
-   </Link>
+      {/* Link to the cart page */}
+      <Link to="/cart">
+        <Button className='relative'>
+          {/* Cart icon from react-icons */}
+          <FaCartShopping className='text-green-500 text-2xl mt-1' />
+          
+          {/* Show item count in the cart if there are products */}
+          {cartproducts.length > 0 && (
+            // A small badge showing the number of items in the cart
+            <Box className='absolute bg-white flex p-1 items-center rounded-full w-4 top-[-6px] right-[-5px] h-4 animate-bounce'>
+              {cartproducts.length} {/* Display the count */}
+            </Box>
+          )}
+        </Button>
+      </Link>
     </>
   )
 }
