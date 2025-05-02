@@ -67,17 +67,17 @@ export default function useAuthentication(email, password) {
     if (login === true) {
       Cookies.set('login', JSON.stringify(false), { expires: 7 })
       toast.success("Successfully logged out");
-      navigate('/login');
+      navigate('/login') // Redirect to login page after logout
     } else {
       toast.warning("Please log in first");
-      navigate('/login');
+      navigate('/login'); // Redirect to login page if not logged in
     }
   }
 
   // Handle contact form submission
   const contactSubmit = (e) => {
     e.preventDefault()
-    toast.success("Message submitted successfully")
+    toast.success("Message submitted successfully");
   }
 
   // Return authentication functions
