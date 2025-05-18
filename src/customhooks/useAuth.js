@@ -3,10 +3,12 @@ import { auth } from "../Backend/Firebase/Firebase"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
 import Cookies from "js-cookie"
+import { useDispatch } from "react-redux"
+import { Settabstatus } from "../redux/Tabbarslice"
 
 export default function useAuthentication(email, password) {
   const navigate = useNavigate()
-
+  const dispatch=useDispatch()// Importing useDispatch from react-redux to dispatch actions
   // Register a new user with email and password
   const registerSubmit = async (e) => {
     e.preventDefault()
@@ -31,8 +33,9 @@ export default function useAuthentication(email, password) {
     try {
         await signInWithEmailAndPassword(auth, email, password);
         Cookies.set('login', JSON.stringify(true), { expires: 7 });
-      toast.success("Login successful")
-      navigate('/reciepe')
+        dispatch(Settabstatus(0)) // Set the active tab to 0 (Home) after login
+        toast.success("Login successful")
+        navigate('/')
     } catch  {
       toast.error("Invalid username or password")
     }

@@ -8,20 +8,20 @@ function App() {
   useEffect(() => {
     // Initializing AOS with custom settings
     AOS.init({
-      offset: 100, 
+      offset: 100,
       duration: 800,
-      easing: "ease-in-sin",  
-      delay: 100,  
+      easing: "ease-in-sin",
+      delay: 100,
     });
-    
-    
+
+
     AOS.refresh();
   }, []);  // Empty dependency array to run this effect only once when the component mounts
 
   return (
-    <>
+    <main>
       <Routings />  {/* Rendering the Routings component that handles routing and page navigation */}
-    </>
+    </main>
   );
 }
 

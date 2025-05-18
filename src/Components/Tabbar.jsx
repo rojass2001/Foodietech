@@ -5,20 +5,18 @@ import { Link } from "react-router-dom"; // Importing Link component from react-
 import { IoIosContact } from "react-icons/io"; // Importing Contact icon
 import useAuthentication from "../customhooks/useAuth"; // Custom hook to manage authentication
 import useKeyboardStatus from "../customhooks/useKeyboard"; // Custom hook to check keyboard status
-import { useState } from "react"; // Importing useState hook to manage state
 import Box from "./Box"; // Box component for layout and styling
 import Button from "./Button"; // Button component for clickable buttons
+import { useDispatch, useSelector } from "react-redux";
+import { Settabstatus } from "../redux/Tabbarslice";
 
 function Tabbar() {
-  const [click, setclick] = useState(0); // State for tracking which button is clicked
+  const { activeTab}=useSelector((state) => state.tab); 
   const { isKeyboardOpen } = useKeyboardStatus(); // Checking if the keyboard is open
   const { logout } = useAuthentication(); // Destructuring logout function from authentication hook
-
-  // Function to change the clicked status based on the index of the button clicked
-  const changestatus = (index) => {
-    setclick(index); // Update the state with the index of the clicked button
-  }
-
+  const dispatch=useDispatch()
+  
+ 
   return (
     <>
       {!isKeyboardOpen && // Only display the Tabbar if the keyboard is not open
@@ -26,28 +24,28 @@ function Tabbar() {
           <Box className='w-[97%] flex justify-around py-1 rounded-3xl items-center place-content-center bg-black'>
             {/* Home Button */}
             <Link to="/">
-              <Button onClick={() => changestatus(0)} className={`flex items-center text-sm place-content-center flex-col ${click === 0 ? "font-bold" : ""}`}>
+              <Button onClick={() => dispatch(Settabstatus(0))} className={`flex items-center text-sm place-content-center flex-col ${activeTab === 0 ? "font-bold" : ""}`}>
                 <FaHome className='text-2xl' />Home
               </Button>
             </Link>
 
             {/* Shop Button */}
             <Link to="/reciepe">
-              <Button onClick={() => changestatus(1)} className={`flex items-center text-sm place-content-center flex-col ${click === 1 ? "font-bold" : ""}`}>
+              <Button onClick={() => dispatch(Settabstatus(1))} className={`flex items-center text-sm place-content-center flex-col ${activeTab === 1 ? "font-bold" : ""}`}>
                 <FaShop className='text-2xl' />Shop
               </Button>
             </Link>
 
             {/* Contact Button */}
             <Link to="/contact">
-              <Button onClick={() => changestatus(2)} className={`flex items-center text-sm place-content-center flex-col ${click === 2 ? "font-bold" : ""}`}>
+              <Button onClick={() => dispatch(Settabstatus(2))} className={`flex items-center text-sm place-content-center flex-col ${activeTab === 2 ? "font-bold" : ""}`}>
                 <IoIosContact className='text-2xl' />Contact
               </Button>
             </Link>
 
             {/* Logout Button */}
             <Link to="/login" onClick={logout}>
-              <Button onClick={() => changestatus(3)} className={`flex items-center text-sm place-content-center flex-col ${click === 3 ? "font-bold" : ""}`}>
+              <Button onClick={() => dispatch(Settabstatus(3))}  className={`flex items-center text-sm place-content-center flex-col `}>
                 <HiOutlineUser className='text-2xl' />Logout
               </Button>
             </Link>
